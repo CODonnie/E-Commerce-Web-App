@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
-    const [menu, setMenu] = useState("shop")
+    const [menu, setMenu] = useState("")
 
   return (
     <div className='navbar'>
@@ -35,8 +35,8 @@ const Navbar = () => {
         }}><Link style={{ textDecoration: 'none', color: 'black' }} to='/kids'>Kids</Link> {menu === "kids" ? <hr/> : <></>}</li>
       </ul>
       <div className="nav-login-cart">
-        <Link style={{ textDecoration: 'none' }} to='/login'><button>Login</button></Link>
-        <Link style={{ textDecoration: 'none' }} to='/cart'><img src={cart_icon} alt="" /></Link>
+        <Link style={{ textDecoration: 'none' }} to='/login'><button onClick={() => {setMenu('')}}>Login</button></Link>
+        <Link style={{ textDecoration: 'none' }} to='/cart'><img onClick={() => {setMenu('')}} src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count">0</div>
       </div>
     </div>
